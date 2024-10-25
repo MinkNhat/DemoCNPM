@@ -8,7 +8,8 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     categories = dao.load_categories()
-    return render_template("index.html", categories=categories)
+    products = dao.load_products()
+    return render_template("index.html", categories=categories, products=products)
 
 
 if __name__ == '__main__':

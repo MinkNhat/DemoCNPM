@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "May anh sony",
+    "price": 20000000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877844/uploads/sd0ndiggxxsasrtvojci.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Canon",
+    "price": 27000000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727881462/uploads/usjqjg3j2ovl68tkrrea.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Fujifilm",
+    "price": 35000000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877793/uploads/ouyxa1uoesbc0ar5w8ok.jpg"
+  },
+  {
+    "id": 4,
+    "name": "May quay phim",
+    "price": 48000000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877844/uploads/wro2es3w7shx34fxy5m4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Ong kinh",
+    "price": 6750000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727884658/uploads/yozsm7mxogidmadflhow.jpg"
+  },{
+    "id": 6,
+    "name": "X100V",
+    "price": 52800000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877792/uploads/dfxie2h5b38rhmqguahj.jpg"
+  }
+]
