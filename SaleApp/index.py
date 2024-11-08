@@ -3,6 +3,7 @@ import dao
 from __init__ import app, db
 
 
+
 # Định tuyến domain
 @app.route("/")
 def index():
