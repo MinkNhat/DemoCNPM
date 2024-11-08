@@ -1,0 +1,15 @@
+{%extends "layout/base.html"%}
+
+{%block title%}CHI TIẾT SẢN PHẨM{%endblock%}
+
+{%block content%}
+<div class="row align-items-center">
+    <div class="col-md-6 col-12">
+        <img src="{{product.image}}" class="img-fluid"/>
+    </div>
+    <div class="col-md-6 col-12">
+        <h1 class="text-info">{{product.name}}</h1>
+        <h3 class="text-danger">Giá : {{product.price}}</h3>
+    </div>
+</div>
+{%endblock%}

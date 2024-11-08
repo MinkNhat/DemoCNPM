@@ -16,5 +16,14 @@ def load_products(q=None, category_id=None):
         return products
 
 
+def load_product_by_id(id):
+    with open("data/products.json", encoding="utf-8") as f:
+        products = json.load(f)
+
+        for p in products:
+            if p["id"].__eq__(id):
+                return p
+
+
 if __name__ == "__main__":
     print(load_products())
