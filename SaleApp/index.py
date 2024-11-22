@@ -1,7 +1,8 @@
+import math
+
 from flask import render_template, request, redirect
 import dao
 from __init__ import app, db
-
 
 
 # Định tuyến domain
@@ -9,9 +10,11 @@ from __init__ import app, db
 def index():
     q = request.args.get("q")
     category_id = request.args.get("category_id")
-    products = dao.load_products(q, category_id)
+    page = request.args.get("page")
+    products = dao.load_products(q, category_id, page)
+    pages = dao.count_product()
 
-    return render_template("index.html", products=products)
+    return render_template("index.html", products=products, pages=math.ceil(pages/app.config["PAGE_SIZE"]))
 
 
 @app.route("/products/<int:id>")

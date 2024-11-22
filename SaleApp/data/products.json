@@ -1,43 +1,62 @@
 [
   {
     "id": 1,
-    "name": "May anh sony",
+    "name": "Máy ảnh Sony A64000",
     "price": 20000000,
-    "category_id": 1,
-    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877844/uploads/sd0ndiggxxsasrtvojci.jpg"
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877844/uploads/sd0ndiggxxsasrtvojci.jpg",
+    "category_id": 1
   },
   {
     "id": 2,
-    "name": "Canon",
+    "name": "Máy ảnh Canon",
     "price": 27000000,
-    "category_id": 1,
-    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727881462/uploads/usjqjg3j2ovl68tkrrea.jpg"
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727881462/uploads/usjqjg3j2ovl68tkrrea.jpg",
+    "category_id": 1
+
   },
   {
     "id": 3,
-    "name": "Fujifilm",
+    "name": "Máy ảnh Fujifilm",
     "price": 35000000,
-    "category_id": 1,
-    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877793/uploads/ouyxa1uoesbc0ar5w8ok.jpg"
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877793/uploads/ouyxa1uoesbc0ar5w8ok.jpg",
+    "category_id": 1
   },
   {
     "id": 4,
-    "name": "May quay phim",
+    "name": "Máy quay phim Sony",
     "price": 48000000,
-    "category_id": 2,
-    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877844/uploads/wro2es3w7shx34fxy5m4.jpg"
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877844/uploads/wro2es3w7shx34fxy5m4.jpg",
+    "category_id": 2
   },
   {
     "id": 5,
-    "name": "Ong kinh",
+    "name": "Ống kính Sigma",
     "price": 6750000,
-    "category_id": 3,
-    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727884658/uploads/yozsm7mxogidmadflhow.jpg"
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727884658/uploads/yozsm7mxogidmadflhow.jpg",
+    "category_id": 3
   },{
     "id": 6,
-    "name": "X100V",
+    "name": "Máy ảnh X100V",
     "price": 52800000,
-  "category_id": 2,
-    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877792/uploads/dfxie2h5b38rhmqguahj.jpg"
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877792/uploads/dfxie2h5b38rhmqguahj.jpg",
+    "category_id": 2
+  },{
+    "id": 7,
+    "name": "Máy ảnh M10",
+    "price": 52800000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877792/uploads/dfxie2h5b38rhmqguahj.jpg",
+    "category_id": 1
+  },{
+    "id": 8,
+    "name": "Ống kính",
+    "price": 52800000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877792/uploads/dfxie2h5b38rhmqguahj.jpg",
+    "category_id": 3
+  },{
+    "id": 9,
+    "name": "Máy quay xưa",
+    "price": 52800000,
+    "image": "https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877792/uploads/dfxie2h5b38rhmqguahj.jpg",
+    "category_id": 2
   }
 ]
