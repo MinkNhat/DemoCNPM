@@ -1,10 +1,12 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from __init__ import app, db
+from flask_login import UserMixin
 import hashlib
+import json
 
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=True)
     username = Column(String(50), nullable=False, unique=True)
@@ -41,18 +43,18 @@ class Product(db.Model):
 if __name__ == "__main__":
     with app.app_context():
         # tao bang
-        # db.create_all()
+        db.create_all()
 
-        # c1 = Category(name="MÁY ẢNH")
-        # c2 = Category(name="MÁY QUAY PHIM")
-        # c3 = Category(name="ỐNG KÍNH")
-        # db.session.add_all([c1, c2, c3])
+        c1 = Category(name="MÁY ẢNH")
+        c2 = Category(name="MÁY QUAY PHIM")
+        c3 = Category(name="ỐNG KÍNH")
+        db.session.add_all([c1, c2, c3])
 
-        # with open("data/products.json", encoding="utf-8") as f:
-        #     products = json.load(f)
-        #     for p in products:
-        #         prod = Product(**p)
-        #         db.session.add(prod)
+        with open("data/products.json", encoding="utf-8") as f:
+            products = json.load(f)
+            for p in products:
+                prod = Product(**p)
+                db.session.add(prod)
 
         name = "Minh Nhat"
         username = "admin"

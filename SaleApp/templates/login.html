@@ -15,6 +15,10 @@
         <label for="password">Password</label>
     </div>
 
+    {%if err_msg%}
+        <div class="alert alert-danger">{{err_msg}}</div>
+    {%endif%}
+
     <div class="form-floating mt-4 mb-3 text-center">
         <button class="btn btn-info" type="submit">Đăng nhập</button>
     </div>
