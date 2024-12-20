@@ -1,9 +1,15 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, Boolean
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Boolean, Enum
 from sqlalchemy.orm import relationship
 from __init__ import app, db
 from flask_login import UserMixin
+from enum import Enum as RoleEnum
 import hashlib
 import json
+
+
+class UserEnum(RoleEnum):
+    USER = 1
+    ADMIN = 2
 
 
 class User(db.Model, UserMixin):
@@ -13,6 +19,7 @@ class User(db.Model, UserMixin):
     password = Column(String(50), nullable=False)
     active = Column(Boolean, default=True)
     avatar = Column(String(255), default="https://res.cloudinary.com/dbmwgavqz/image/upload/v1727877793/uploads/ouyxa1uoesbc0ar5w8ok.jpg")
+    role = Column(Enum(UserEnum), default=UserEnum.USER)
 
     def __str__(self):
         return self.name
@@ -45,16 +52,16 @@ if __name__ == "__main__":
         # tao bang
         db.create_all()
 
-        c1 = Category(name="MÁY ẢNH")
-        c2 = Category(name="MÁY QUAY PHIM")
-        c3 = Category(name="ỐNG KÍNH")
-        db.session.add_all([c1, c2, c3])
-
-        with open("data/products.json", encoding="utf-8") as f:
-            products = json.load(f)
-            for p in products:
-                prod = Product(**p)
-                db.session.add(prod)
+        # c1 = Category(name="MÁY ẢNH")
+        # c2 = Category(name="MÁY QUAY PHIM")
+        # c3 = Category(name="ỐNG KÍNH")
+        # db.session.add_all([c1, c2, c3])
+        #
+        # with open("data/products.json", encoding="utf-8") as f:
+        #     products = json.load(f)
+        #     for p in products:
+        #         prod = Product(**p)
+        #         db.session.add(prod)
 
         name = "Minh Nhat"
         username = "admin"

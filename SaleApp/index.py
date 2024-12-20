@@ -1,9 +1,8 @@
 import math
-
 import cloudinary.uploader
 from flask_login import login_user, current_user, logout_user
-from flask import render_template, request, redirect
-import dao, admin
+from flask import render_template, request, redirect, session, jsonify
+import dao, admin, utils
 from __init__ import app, login
 from cloudinary import uploader
 
@@ -23,7 +22,6 @@ def index():
 @app.route("/products/<int:id>")
 def product_details(id):
     product = dao.load_product_by_id(id)
-    categories = dao.load_categories()
     return render_template("product-details.html", product=product)
 
 
@@ -33,7 +31,7 @@ def login_my_user():
         return redirect("/")
 
     err_msg = None
-    if(request.method.__eq__('POST')):
+    if request.method.__eq__('POST'):
         username = request.form.get('username')
         password = request.form.get('password')
         user = dao.auth_user(username=username, password=password)
@@ -80,11 +78,47 @@ def register_usr():
     return render_template("register.html", err_msg=err_msg)
 
 
+@app.route("/login-admin", methods=['post'])
+def login_admin_user():
+    err_msg = None
+    username = request.form.get('username')
+    password = request.form.get('password')
+    user = dao.auth_user(username=username, password=password)
+    if user:
+        login_user(user)
+        return redirect('/admin')
+    else:
+        err_msg = "Tài khoản hoặc mật khẩu không đúng!"
+    return render_template('admin/index.html', err_msg=err_msg)
+
+
 @app.context_processor
 def common_attributes():
     return {
         "categories": dao.load_categories()
     }
+
+
+@app.route('/api/carts', methods=['post'])
+def add_to_cart():
+    cart = session.get('cart')
+    if not cart:
+        cart = {}
+
+    id = str(request.json.get('id'))
+
+    if id in cart:
+        cart[id]['quantity'] += 1
+    else:
+        cart[id] = {
+            'id': id,
+            'name': request.json.get('name'),
+            'price': request.json.get('price'),
+            'quantity': 1
+        }
+
+    session['cart'] = cart
+    return jsonify(utils.count_cart(cart))
 
 
 if __name__ == '__main__':
