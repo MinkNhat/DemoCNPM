@@ -86,16 +86,17 @@ def login_admin_user():
     user = dao.auth_user(username=username, password=password)
     if user:
         login_user(user)
-        return redirect('/admin')
+
     else:
         err_msg = "Tài khoản hoặc mật khẩu không đúng!"
-    return render_template('admin/index.html', err_msg=err_msg)
+    return redirect('/admin')
 
 
 @app.context_processor
 def common_attributes():
     return {
-        "categories": dao.load_categories()
+        "categories": dao.load_categories(),
+        "stats_cart": utils.count_cart(session.get('cart'))
     }
 
 
@@ -119,6 +120,11 @@ def add_to_cart():
 
     session['cart'] = cart
     return jsonify(utils.count_cart(cart))
+
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
 
 
 if __name__ == '__main__':

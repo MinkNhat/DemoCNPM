@@ -1,0 +1,13 @@
+{%extends "layout/base.html"%}
+
+{%block title%}GIỎ HÀNG{%endblock%}
+
+{%block content%}
+    {%if stats_cart.total_quantity == 0%}
+        <div class="alert">Không có sản phẩm trong giỏ hàng</div>
+    {{else}}
+
+        {{for c in stats_cart.values()}}
+
+    {{endif}}
+{%endblock%}
